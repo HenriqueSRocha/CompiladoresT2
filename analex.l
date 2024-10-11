@@ -4,43 +4,45 @@
 #include "tabsimb.h"
 int linha = 1;
 %}
+digt [1-9]
 dig [0-9]
 letra [a-zA-Z_]
-nletra [^\"]
+nstring [^\"] 
 %%
-"int"  	{return INT;}
-"float"	{return FLOAT;}
-"if"	{return IF;}	
-">="  	{return GE;} 
-"<="	{return LE;}
-"=="	{return EQ;}
-"for"	{return FOR;}
-"while"	{return WHILE;}	
-"&&"	{return AND;}	
-"void"	{return VOID;}
-"or"	{return OR;}	
-"!"		{return '!';}	
-"("	  	{return '(';}
-")"   	{return ')';}
-"{"	  	{return '{';}
-"}"   	{return '}';}
-";"   	{return ';';}
-"="   	{return '=';}
-","   	{return ',';}
-"+"		{return '+';}
-"-"		{return '-';}
-"*"		{return '*';}
-"/"		{return '/';}
-">"		{return '>';}
-"<"		{return '<';}
-"else"	{return ELSE;}
+"int"  	 {return INT;}
+"float"	 {return FLOAT;}
+"char"	 {return CHAR;}
+"if"	 {return IF;}	
+">="  	 {return GE;} 
+"<="	 {return LE;}
+"=="	 {return EQ;}
+"for"	 {return FOR;}
+"while"	 {return WHILE;}	
+"&&"	 {return AND;}	
+"void"	 {return VOID;}
+"||"	 {return OR;}	
+"else"	 {return ELSE;}
 "return" {return RETURN;}
-"\""	{return ASPAS;}
+"\""	 {return ASPAS;}
+"!"		 {return '!';}	
+"("	  	 {return '(';}
+")"   	 {return ')';}
+"{"	  	 {return '{';}
+"}"   	 {return '}';}
+";"   	 {return ';';}
+"="   	 {return '=';}
+","   	 {return ',';}
+"+"		 {return '+';}
+"-"		 {return '-';}
+"*"		 {return '*';}
+"/"		 {return '/';}
+">"		 {return '>';}
+"<"		 {return '<';}
 
 {dig}+("."{dig}+)?	{return NUM;}
 {letra}({letra}|{dig})*  { insere(yytext); return ID;}  
 [ \t\r] {}
-\"{nletra}+\"	{return STRING;}
+\"{nstring}+\"	{return STRING;}
 
 
 

@@ -100,7 +100,7 @@ erro lexico na linha 1 - .
 98) 272 "\nEnjoy your meal! (And don't burn yourself!)\n"
 99) 41 )
 100) 59 ;
-101) 274 return
+101) 265 return
 102) 256 0
 103) 59 ;
 104) 125 }
